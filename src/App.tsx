@@ -1,11 +1,9 @@
-'use client';
-
 import { useState } from 'react';
-import LandingAnimation from './components/LandingAnimation';
-import RoleSelection from './components/RoleSelection';
-import OrganizerDashboard from './components/OrganizerDashboard';
-import VolunteerDashboard from './components/VolunteerDashboard';
-import VendorDashboard from './components/VendorDashboard';
+import LandingAnimation from '@/components/LandingAnimation';
+import RoleSelection from '@/components/RoleSelection';
+import OrganizerDashboard from '@/components/OrganizerDashboard';
+import VolunteerDashboard from '@/components/VolunteerDashboard';
+import VendorDashboard from '@/components/VendorDashboard';
 import type { EventRole, RoleId, UiBlock, Task } from '@/types';
 
 // Roles configuration - In the future, this could be populated by AI context

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import DashboardCard from '@/app/components/DashboardCard';
+import DashboardCard from './DashboardCard';
 import type { UiBlock } from '@/types';
 
 interface OrganizerDashboardProps {
