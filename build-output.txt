@@ -1,0 +1,43 @@
+
+> event-pulse@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.7
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Found 1 warning while optimizing generated CSS:
+
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+[2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+[2m┆[22m
+[2m│ :root {[22m
+[2m│   --background: hsl(240, 20%, 98%);[22m
+
+ ✓ Compiled successfully in 25.3s
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/7) ...
+   Generating static pages (1/7) 
+   Generating static pages (3/7) 
+   Generating static pages (5/7) 
+ ✓ Generating static pages (7/7)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    9.01 kB         116 kB
+├ ○ /_not-found                             1 kB         108 kB
+├ ○ /chat                                6.68 kB        1.16 MB
+└ ○ /interactables                       3.99 kB        1.16 MB
++ First Load JS shared by all             107 kB
+  ├ chunks/1255-642c76f13c20a3ec.js      45.5 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
+  └ other shared chunks (total)          7.44 kB
+
+
+○  (Static)  prerendered as static content
+

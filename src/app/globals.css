@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Tailwind CSS Variables customized with tambo colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Tambo Specific Variables needed for tambo components */
+  --color-container: var(--container);
+  --color-backdrop: var(--backdrop);
+  --color-muted-backdrop: var(--muted-backdrop);
+
+  /* Premium Gradient Colors */
+  --color-gradient-1: var(--gradient-1);
+  --color-gradient-2: var(--gradient-2);
+  --color-gradient-3: var(--gradient-3);
+}
+
+:root {
+  /* Event Mission Control Color Palette */
+  /* Calm, trustworthy, operational - clarity over flair */
+
+  /* Backgrounds & Surfaces */
+  --background: #F9FAFB;
+  /* App background */
+  --foreground: #111827;
+  /* Primary text */
+  --card: #FFFFFF;
+  /* Cards */
+  --card-foreground: #111827;
+  /* Card text */
+  --popover: #FFFFFF;
+  /* Popover */
+  --popover-foreground: #111827;
+  /* Popover text */
+
+  /* Primary Colors - Teal/Cyan */
+  --primary: #0EA5A4;
+  /* Primary teal */
+  --primary-foreground: #FFFFFF;
+  /* White on primary */
+  --secondary: #0D9488;
+  /* Secondary darker teal */
+  --secondary-foreground: #FFFFFF;
+  /* White on secondary */
+
+  /* Accent & Muted */
+  --accent: #F3F4F6;
+  /* Light accent */
+  --accent-foreground: #111827;
+  /* Dark text */
+  --muted: #F3F4F6;
+  /* Muted background */
+  --muted-foreground: #6B7280;
+  /* Secondary text */
+
+  /* Status Colors (alerts & badges only) */
+  --destructive: #EF4444;
+  /* High/Emergency */
+  --warning: #F59E0B;
+  /* Medium/Warning */
+  --success: #22C55E;
+  /* Normal/OK */
+
+  /* Borders & Inputs */
+  --border: #E5E7EB;
+  /* Borders */
+  --input: #E5E7EB;
+  /* Input borders */
+  --ring: #0EA5A4;
+  /* Focus ring */
+
+  /* Chart Colors */
+  --chart-1: #0EA5A4;
+  --chart-2: #0D9488;
+  --chart-3: #22C55E;
+  --chart-4: #F59E0B;
+  --chart-5: #EF4444;
+
+  /* Gradients */
+  --gradient-1: linear-gradient(135deg, #0EA5A4 0%, #0D9488 100%);
+  --gradient-2: linear-gradient(135deg, #0D9488 0%, #0EA5A4 100%);
+  --gradient-3: linear-gradient(135deg, #22C55E 0%, #0EA5A4 100%);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.2);
+
+  /* Tambo Variables */
+  --container: #F9FAFB;
+  --backdrop: rgba(17, 24, 39, 0.3);
+  --muted-backdrop: rgba(17, 24, 39, 0.1);
+  --radius: 0.5rem;
+  --panel-left-width: 500px;
+  --panel-right-width: 500px;
+  --sidebar-width: 3rem;
+}
+
+.dark {
+  /* Dark Mode - Mission Control */
+  --background: #111827;
+  --foreground: #F9FAFB;
+  --card: #1F2937;
+  --card-foreground: #F9FAFB;
+  --popover: #1F2937;
+  --popover-foreground: #F9FAFB;
+
+  --primary: #14B8A6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0D9488;
+  --secondary-foreground: #FFFFFF;
+
+  --accent: #374151;
+  --accent-foreground: #F9FAFB;
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+
+  --destructive: #F87171;
+  --border: #374151;
+  --input: #374151;
+  --ring: #14B8A6;
+
+  /* Glassmorphism Dark */
+  --glass-bg: rgba(31, 41, 55, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --container: #1F2937;
+  --backdrop: rgba(0, 0, 0, 0.5);
+  --muted-backdrop: rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Timing Tokens */
+:root {
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --glow-primary: 0 0 20px rgba(14, 165, 164, 0.3);
+  --shadow-elevated: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --blur-glass: blur(12px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    position: relative;
+  }
+
+  /* Animated Background Grid */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle, rgba(14, 165, 164, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    animation: gridDrift 60s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h2 {
+    font-weight: 600;
+  }
+}
+
+/* EventPulse Landing Animation Keyframes */
+@keyframes slideInWord {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveToLogo {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(calc(-50vw + 42px), calc(-50vh + 32px)) scale(0.28);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDashboard {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flash {
+
+  0%,
+  100% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: hsl(262, 83%, 58%, 0.2);
+  }
+}
+
+/* UI Enhancement Animations */
+@keyframes gridDrift {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 32px 32px;
+  }
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cardGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(14, 165, 164, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 164, 0.3);
+  }
+}
+
+@keyframes buttonRipple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes thinking-gradient {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-flash {
+  animation: flash 1s ease-in-out;
+}
+
+.animate-thinking-gradient {
+  background: linear-gradient(90deg,
+      hsl(240, 5%, 45%) 0%,
+      hsl(240, 5%, 75%) 50%,
+      hsl(240, 5%, 45%) 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: thinking-gradient 2s linear infinite;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Gradient Text - Mission Control */
+.gradient-text {
+  background: linear-gradient(135deg, #0EA5A4, #0D9488);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium Button Styles */
+.btn-premium {
+  @apply relative overflow-hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium::before {
+  content: '';
+  @apply absolute inset-0 opacity-0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  transition: opacity 0.3s ease;
+}
+
+.btn-premium:hover::before {
+  @apply opacity-100;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px hsla(180, 84%, 35%, 0.4);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
